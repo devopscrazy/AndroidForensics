@@ -1,0 +1,13 @@
+obj-m += module.o
+
+KDIR := ~/android/test-goldfish/goldfish/
+CCPATH := ~/android/test-goldfish/arm-eabi-4.8/bin
+
+-include version.mk
+
+all: dwarf
+
+dwarf: module.c
+	$(MAKE) ARCH=arm CROSS_COMPILE=$(CCPATH)/arm-eabi- -C $(KDIR) \
+		CONFIG_DEBUG_INFO=y M=$(PWD) modules
+	dwarfdump -di module.ko > module.dwarf

@@ -1,0 +1,24 @@
+obj-m := lime.o
+lime-objs := tcp.o disk.o main.o
+
+KDIR := ~/android/test-goldfish/goldfish/
+KVER := goldfish
+
+PWD := $(shell pwd)
+CCPATH := ~/android/test-goldfish/arm-eabi-4.8/bin
+
+default:
+	$(MAKE) -C $(KDIR) M=$(PWD) modules
+	$(CCPATH)/arm-eabi-strip --strip-unneeded lime.ko
+	mv lime.ko lime-$(KVER).ko
+
+	$(MAKE) tidy
+
+tidy:
+	rm -f *.o *.mod.c Module.symvers Module.markers modules.order \.*.o.cmd \
+		\.*.ko.cmd \.*.o.d
+	rm -rf \.tmp_versions
+
+clean:
+	$(MAKE) tidy
+	rm -f *.ko
