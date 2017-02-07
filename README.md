@@ -14,5 +14,5 @@ The script has options to
 * use volatility to intergate the memory dump
 * use volatility to dump out the running processes from the memory dump
 
-Video's demosing how to use this script are available on YouTube at:
+Video's that demo the use of this script are available on YouTube at:
 https://www.youtube.com/playlist?list=PLIHEc6VrhPadSg6Gvts1e224INVROKfRR
