@@ -5,6 +5,12 @@ LiME, Volatility and custom Python wrapper script for android forensic analysis
 This project contains files and custom scripts to extract processes from Android devices using LiME and Volatility.
 The main file androidforensics.py can be run using the command python androidforensics.py
 
+# Emulator specifications
+* Nexus 5 API 21
+* Android 5.0 Google API 21
+* ARM CPU
+* 1GB RAM
+
 # Details
 The script has options to
 * start an emulator with a custom built kernel that has custom modules enabled
